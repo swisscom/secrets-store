@@ -18,7 +18,8 @@ app.get( '/', function ( req, res) {
     app_disk_limits:    cf_app.get_app_disk_limits(),
     service_label:      cf_svc.get_service_label(),
     service_name:       cf_svc.get_service_name(),
-    service_plan:       cf_svc.get_service_plan()
+    service_plan:       cf_svc.get_service_plan(),
+    secrets_store:      cf_svc.get_secrets()
   })
 })
 

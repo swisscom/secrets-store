@@ -35,5 +35,17 @@ module.exports = {
         }
       }
     }
+  },
+  get_secrets: function () {
+    if (process.env.VCAP_SERVICES) {
+      var svc_info = JSON.parse(process.env.VCAP_SERVICES)
+      for (var label in svc_info) {
+        var svcs = svc_info[label]
+        for (var index in svcs) {
+          var label = JSON.stringify(svcs[index].credentials)
+          return label
+        }
+      }
+    }
   }
 }
