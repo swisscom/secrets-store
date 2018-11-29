@@ -1,6 +1,6 @@
 ---
 applications:
-- name: cf-nodejs
+- name: cf-nodejs-secrets-store
   memory: 512M
   instances: 1
   random-route: true
